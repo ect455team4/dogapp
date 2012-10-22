@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  
   def welcome
   	@title = "Welcome"
   end
@@ -12,4 +11,11 @@ class PagesController < ApplicationController
   	@title = "Contact"
   end
 
+  def join
+  	@title = "Join"
+  end
+
+  def signin
+  	@title = "Sign in"
+  end
 end
