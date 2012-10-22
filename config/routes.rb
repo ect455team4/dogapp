@@ -1,14 +1,17 @@
 Dogapp::Application.routes.draw do
-  match '/signin', :to => 'pages#signin'
-  match '/join', :to => 'pages#join'
-  #match '/about', :to 'pages#about'
-  #match '/contact', :to 'pages#contact'
+  get "users/new"
+
+  match '/signup',    :to => 'users#new'
+
+  #match '/signin',   :to => 'pages#signin'
+  #match '/join',     :to => 'pages#join'
+  match '/about',     :to => 'pages#about'
+  match '/contact',   :to => 'pages#contact'
 
   root :to  => "pages#welcome"
-  #root_path => '/'
-  #root_url  => 'http://localhost:3000/'
 
-  #get "users/new"
+
+  
 
   #get "pages/welcome"
 

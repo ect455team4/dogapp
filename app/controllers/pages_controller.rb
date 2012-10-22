@@ -1,23 +1,15 @@
 class PagesController < ApplicationController
   
   def welcome
-  @title = "Welcome"
-  end
-
-  def signin 
-  @title = "Sign In"
-  end
-
-  def join
-  @title = "Join"
+  	@title = "Welcome"
   end
 
   def about
-  @title = "About"
+  	@title = "About"
   end
 
   def contact
-  @title = "Contact"
+  	@title = "Contact"
   end
 
 end
