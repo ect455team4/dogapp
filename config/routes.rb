@@ -1,5 +1,15 @@
 Dogapp::Application.routes.draw do
-  get "pages/welcome"
+  match '/signin', :to => 'pages#signin'
+  match '/join', :to => 'pages#join'
+  match '/about', :to 'pages#about'
+  match '/contact', :to 'pages#contact'
+
+  root_path => '/'
+  rooturl => 'http://localhost:3000'
+
+  #get "users/new"
+
+  #get "pages/welcome"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
