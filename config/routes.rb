@@ -1,18 +1,12 @@
 Dogapp::Application.routes.draw do
   match '/signin', :to => 'pages#signin'
   match '/join', :to => 'pages#join'
-  match '/about', :to 'pages#about'
-  match '/contact', :to 'pages#contact'
+  #match '/about', :to 'pages#about'
+  #match '/contact', :to 'pages#contact'
 
-  #signin_path => '/signin'
-  #signin_url => 'http://localhost:3000/signin'
-
+  root :to  => "pages#welcome"
   #root_path => '/'
-  #root_url  => 'http://localhost:3000'
-
-  #root :to => 'pages#welcome'
-  #root_path => '/'
-  #root_url => 'http://localhost:3000'
+  #root_url  => 'http://localhost:3000/'
 
   #get "users/new"
 
@@ -67,7 +61,7 @@ Dogapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#index'
+  #root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

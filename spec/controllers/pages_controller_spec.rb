@@ -7,25 +7,34 @@ describe PagesController do
       get 'welcome'
       response.should be_success
     end
+  end
+  
   describe "GET 'signin'" do
     it "returns http success" do
       get 'signin'
       response.should be_success
     end
+  end
+  
   describe "GET 'join'" do
     it "returns http success" do
       get 'join'
       response.should be_success
     end
+  end
+  
   describe "GET 'about'" do
     it "returns http success" do
       get 'about'
       response.should be_success
     end
+  end
+  
   describe "GET 'contact'" do
     it "returns http success" do
       get 'contact'
       response.should be_success
     end
   end
+
 end
