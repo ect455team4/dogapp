@@ -1,10 +1,17 @@
-<%= @user.first_name %> <%= @user.last_name %> </br>
-<%= @user.email %> </br>
-<%= @user.dob %> </br> 
-<%= @user.address %> </br>
-<%= @user.city %> </br>
-<%= @user.state %> </br>
-<%= @user.country %> </br>
-<%= @user.short_bio %> </br>
-<%= @user.long_bio %> </br>
-<%= @user.created_at %> </br> 
+<table class="profile" summary="Profile information">
+	<tr>
+		<td class="main">
+			<h1>
+				<%= gravatar_for @user %>
+				<%= @user.first_name %> <%= @user.last_name %>	
+			</h1>
+		</td>
+		<td class="sidebar round">
+			<strong>Name</strong> 	<%= @user.first_name %> <%= @user.last_name %><br />
+			<strong>URL</strong> 	<%= link_to user_path(@user), @user %>
+		</td>
+	</tr>
+</table>
+
+
+
