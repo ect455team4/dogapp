@@ -105,6 +105,26 @@ describe User do
   	it "should set the encrypted password" do
   		@user.encrypted_password.should_not be_blank
   	end
+
+  		describe "authenticate method" do
+
+  			it "should return nil on email/password mismatch" do
+  				wrong_password_user = User.authenticate(@attr[:email], "wrongpass")
+  				wrong_password_use.should be_nil
+  			end
+
+  			it "should return nil for an email address with no user" do
+  				noexistent_user = User.authenticate("bing@bang.com", @attr[:password])
+  				noexistent_user.should be_nil
+  			end
+  			
+  			it "should return the user on email/password match" do
+  				matching_user = User.authenticate(@attr[:email], @attr[:password])
+  				matching_user.should == @user
+  			end
+  		end
+
+
   
 #has password?
 
