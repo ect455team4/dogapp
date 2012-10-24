@@ -1,14 +1,13 @@
 Dogapp::Application.routes.draw do
-  match '/about',     :to => 'pages#about'
-  match '/contact',   :to => 'pages#contact'
+  
+  get "users/new"
 
   match '/join',      :to => 'users#new'
 
+  match '/about',     :to => 'pages#about'
+  match '/contact',   :to => 'pages#contact'
+
   root :to  => 'pages#welcome'
-
-  get "users/new"
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
