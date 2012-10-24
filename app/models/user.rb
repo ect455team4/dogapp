@@ -20,7 +20,7 @@
 class User < ActiveRecord::Base
   attr_accessible :address, :city, :country, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :state
 
-  email_regex = /\A[\w+\-.]@[a-z\d\-.]+\.[a-z]+\z/i
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :first_name, 	:presence	=> true,
   							:length		=> { :maximum => 50 }

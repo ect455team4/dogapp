@@ -1,5 +1,7 @@
 Dogapp::Application.routes.draw do
   
+  resources :users
+
   get "users/new"
 
   match '/join',      :to => 'users#new'
