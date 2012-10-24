@@ -7,6 +7,8 @@ gem 'rails', '3.2.8'
 
 gem 'pg'
 gem 'gravatar_image_tag'
+gem 'thin'
+gem 'sinatra'
 
 group :development do
 	gem 'rspec-rails'
