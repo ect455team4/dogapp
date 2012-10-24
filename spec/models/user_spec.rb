@@ -63,6 +63,8 @@ describe User do
 		no_email_user.should_not be_valid
 	end
 
+#password validation
+
   describe "password validations" do
 
 	it "should require a password" do
@@ -87,7 +89,9 @@ describe User do
 		User.new(hash).should_not be_valid
 	end
   end
-  
+
+#password encryption
+
   describe "password encryption" do
 
   	before(:each) do
@@ -96,6 +100,23 @@ describe User do
 
   	it "should have an encrypted password attribute" do
   		@user.should respond_to(:encrypted_password)
+  	end
+
+  	it "should set the encrypted password" do
+  		@user.encrypted_password.should_not be_blank
+  	end
+  
+#has password?
+
+  	describe "has_password method" do
+  	
+  		it "should be true if the passwords match" do
+  			@user.has_password?(@attr[:password]).should be_true
+  		end
+
+  		it "should be false if the passwords do not match" do
+  			@user.has_password?("invalid").should be_false
+  		end
   	end
   end
 end
