@@ -1,6 +1,9 @@
 <h1>Become a Member</h1>
 
 <%= form_for(@user) do |f| %>
+	
+	<%= render 'shared/error_messages' %>
+
 	<div class="field">
 		<%= f.label :first_name %><br />
 		<%= f.text_field :first_name %>
