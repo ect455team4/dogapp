@@ -11,6 +11,19 @@
 			<strong>URL</strong> 	<%= link_to user_path(@user), @user %><br />
 		</td>
 	</tr>
+	<tr>
+		<td class="">
+			<strong>Email:</strong> 		<%= @user.email %><br /><br />
+			<strong>Birthday:</strong>		<%= @user.dob %><br /><br />
+			<strong>Address:</strong>		<%= @user.address %><br /><br />
+			<strong>City:</strong>			<%= @user.city %><br /><br />
+			<strong>State:</strong>			<%= @user.state %><br /><br />
+			<strong>Country:</strong>		<%= @user.country %><br /><br />
+			<strong>Short Bio:</strong>		<%= @user.short_bio %><br /><br />
+			<strong>Long Bio:</strong>		<%= @user.long_bio %><br /><br />
+		</td>
+	</tr>
+
 </table>
 
 
