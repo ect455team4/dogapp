@@ -1,19 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
 gem 'gravatar_image_tag'
 gem 'thin'
 gem 'sinatra'
+gem 'will_paginate'
 
 group :development do
 	gem 'rspec-rails'
 	gem 'watchr'
 	gem 'annotate'
+	gem 'faker'
 end
 
 group :test do
