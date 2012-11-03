@@ -1,0 +1,31 @@
+<div class="signup_header">
+	<h2>Sign Up. It is free.</h2>
+</div>
+<div class="align_signup">
+<%= form_for User.new do |f| %>
+	<div class="field">
+		<label>First Name:</label><br />
+		<%= f.text_field :first_name %>
+	</div>
+	<div class="field">
+		<label>Last Name:</label><br />
+		<%= f.text_field :last_name %>
+	</div>
+	<div class ="field">
+		<label>Email:</label><br />
+		<%= f.text_field :email %>
+	</div>
+	<div class ="field">
+		<label>Password:</label><br />
+		<%= f.password_field :password %>
+	</div>
+	<div class ="field">
+		<label>Confirm Password:</label><br />
+		<%= f.password_field :password_confirmation %>
+	</div>
+	<div class="signup_action">
+		<%= f.submit "Sign Up" %>
+	</div>
+</div>
+<% end %>
+

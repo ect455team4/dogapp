@@ -10,12 +10,4 @@ class PagesController < ApplicationController
   def contact
   	@title = "Contact"
   end
-
-  def join
-  	@title = "Join"
-  end
-
-  def signin
-  	@title = "Sign in"
-  end
 end

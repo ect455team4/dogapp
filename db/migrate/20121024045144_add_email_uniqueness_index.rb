@@ -1,4 +1,4 @@
-# Migration for enforcing email uniqueness
+ # Migration for enforcing email uniqueness
 # add_index method adds an index on the email column of the users table
 # the index by itself doesnt enforce uniqueness, but the option ':unique => true' does
 

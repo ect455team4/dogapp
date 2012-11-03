@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
-  	@title = "Join"
   end
 
   def index
@@ -15,7 +14,6 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-  	@title = @user.first_name
   end
   
   def create
@@ -24,9 +22,9 @@ class UsersController < ApplicationController
       sign_in @user
   		flash[:success] = "Welcome to DogApp!"
   		redirect_to @user
-  	else
-  		@title = "Join"
-  		render 'new'
+    else
+      flash.now[:error] = "Invalid email or password combination."
+      render 'pages/welcome'
   	end
   end
 

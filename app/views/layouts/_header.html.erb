@@ -1,21 +1,21 @@
 <header>
-	<%= image_tag("Logo.png", :alt => "Logo", :class => "round") %>
+	<%= image_tag("HoundImageLarge.png", :alt => "DogStop", :class => "round") %>
 	<nav class="round">
-		<ul>
-			<li><%= link_to "Home", root_path %>
-			<% if signed_in? %>
-				<li><%= link_to "Users", users_path %></li>
-				<li><%= link_to "Profile", current_user %></li>
-				<li><%= link_to "Settings", edit_user_path(current_user) %></li>
-			<% else %>
-				<li><%= link_to "Join", join_path %></li>
-			<% end %>
-
-			<% if signed_in? %>
-				<li><%= link_to "Sign Out", signout_path, :method => :delete %></li>
-			<% else %>
-				<li><%= link_to "Sign In", signin_path %>
-			<% end %>
-		<ul>
+			<!-- <li><%= link_to "Home", root_path %> -->
+		  <% if signed_in? %>
+		  	<table class="user_nav">
+				<tr>
+					<td><%= link_to "Users", users_path %></td>
+					<td><%= link_to "Profile", current_user %></td>
+					<td><%= link_to "Settings", edit_user_path(current_user) %></td>
+					<td><%= link_to "Sign Out", signout_path, :method => :delete %></td>
+				</tr>
+			</table>
+		  <% else %>
+		  	<table class="signin">
+				<%= render 'sessions/signin' %> 
+			</table>
+		  <% end %>
 	</nav>
+
 </header>

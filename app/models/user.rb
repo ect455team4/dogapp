@@ -17,6 +17,15 @@
 #  updated_at         :datetime         not null
 #  encrypted_password :string(255)
 #  salt               :string(255)
+#  admin              :boolean          default(FALSE)
+#  dog_name           :string(255)
+#  dog_breed          :string(255)
+#  dog_dob            :string(255)
+#  vet                :string(255)
+#  boarder            :string(255)
+#  groomer            :string(255)
+#  food               :string(255)
+#  toys               :string(255)
 #
 
 require 'digest'
@@ -24,7 +33,8 @@ class User < ActiveRecord::Base
   
   attr_accessor :password
 
-  attr_accessible :address, :city, :country, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :state, :password, :password_confirmation
+  attr_accessible :address, :city, :country, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :state, :password, :password_confirmation, 
+                  :dog_name, :dog_breed, :dog_dob, :vet, :boarder, :groomer, :food, :toys
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
