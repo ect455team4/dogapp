@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20121102210904) do
     t.datetime "updated_at",                            :null => false
     t.string   "encrypted_password"
     t.string   "salt"
-    t.boolean  "admin",                                 :default => false
+    t.boolean  "admin",              :default => false
     t.string   "dog_name"
     t.string   "dog_breed"
     t.string   "dog_dob"

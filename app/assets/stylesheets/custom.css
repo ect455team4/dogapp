@@ -123,26 +123,41 @@ td.about {
 
 /* User Show Page */
 
-table.profile {
+div.profile_container {
 	width: 100%;
-	margin-bottom: 0;
 }
 
-td.main {
-	width: 70%;
-	padding: 1em;
+table.user_title {
+	width: 60%;
+	border: 1px solid;
+	margin-bottom: 10px;
 }
 
-td.sidebar {
-	width: 30%;
-	padding: 1em;
-	vertical-align: top;
-	background: #D8D8D8;
+td.user_title {
+
 }
 
 .profile img.gravatar {
 	border: 1px solid #999;
-	margin-bottom: -15px;
+}
+
+table.user_info {
+	width: 60%;
+	border: 1px solid;
+	margin-bottom: 10px;
+}
+
+ul.user_info {
+	list-style-type: none;
+}
+
+table.dog_info {
+	width: 60%;
+	border: 1px solid;
+}
+
+ul.dog_info {
+	list-style-type: none;
 }
 
 /* Form */

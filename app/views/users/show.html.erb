@@ -1,30 +1,27 @@
-<table class="profile" summary="Profile information">
+<table class="user_title" summary="User Information">
 	<tr>
-		<td class="main">
-			<h1>
-				<%= gravatar_for @user, :size => 150 %>
-				<%= @user.first_name %> <%= @user.last_name %>	
-			</h1>
-		</td>
-		<td class="sidebar round">
-			<strong>Name</strong> 	<%= @user.first_name %> <%= @user.last_name %><br />
-			<strong>URL</strong> 	<%= link_to user_path(@user), @user %><br />
+		<td class="user_title">
+			<%= gravatar_for @user, :size => 100 %> 
+			<%= render 'users/user_name' %>
 		</td>
 	</tr>
-	<tr>
-		<td class="">
-			<strong>Email:</strong> 		<%= @user.email %><br /><br />
-			<strong>Birthday:</strong>		<%= @user.dob %><br /><br />
-			<strong>Address:</strong>		<%= @user.address %><br /><br />
-			<strong>City:</strong>			<%= @user.city %><br /><br />
-			<strong>State:</strong>			<%= @user.state %><br /><br />
-			<strong>Country:</strong>		<%= @user.country %><br /><br />
-			<strong>Short Bio:</strong>		<%= @user.short_bio %><br /><br />
-			<strong>Long Bio:</strong>		<%= @user.long_bio %><br /><br />
-		</td>
-	</tr>
-
 </table>
+<table class="user_info" summary="Dog Information">
+	<tr>
+		<td>
+			<%= render 'users/user_info' %>
+		</td>
+	</tr>
+</table>
+<table class="dog_info" summary="Dog Information">
+	<tr>
+		<td class="dog_info">
+			<%= render 'users/dog_info' %>
+		</td>
+	</tr>
+</table>
+
+
 
 
 
