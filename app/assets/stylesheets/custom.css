@@ -123,8 +123,8 @@ td.about {
 
 /* User Show Page */
 
-div.profile_container {
-	width: 100%;
+div.profile_show {
+
 }
 
 table.user_title {
@@ -158,6 +158,10 @@ table.dog_info {
 
 ul.dog_info {
 	list-style-type: none;
+}
+
+table.sidebar {
+	border: 1px solid;
 }
 
 /* Form */
@@ -289,14 +293,37 @@ textarea {
 
 /* User Index  */
 
-ul.users {
-	margin-top: 1em;
+table.index {
+	width: 100%;
+	padding: .3em;
+	border-width: 3px;
+	border-style: outset;
+	border-color: #778899;
 }
 
-.users li {
-	list-style: none;
+td.user_gravatar {
+	width: 8%;
 }
 
+td.user_name {
+	font-size: 18px;
+	width: 22%;
+	text-align: center;
+}
+
+td.user_short_bio {
+	width: 60%;
+	padding-left: 1em;
+	border-left: 1px solid;
+}
+
+td.admin_delete {
+	width: 10%;
+}
+
+div.divider {
+	border-bottom: 1px solid;
+}
 /* Welcome Page */
 
 table.welcome {
@@ -331,3 +358,69 @@ td.join {
 div.signup_action {
 	padding: 0em 0em 0em 7em;
 }
+
+/* Micropost */
+
+h1.micropost {
+	margin-bottom: 0.3em;
+}
+
+table.microposts {
+	margin-top: 1em;
+}
+
+table.microposts tr {
+	height: 70px;
+}
+
+table.microposts tr td.gravatar {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	width: 50px;
+}
+
+table.microposts tr td.micropost {
+	border-top: 1px solid #ccc;
+	vertical-align: top;
+	padding-top: 10px;
+}
+
+table.microposts tr td.micropost span.timestamp {
+	display: block;
+	font-size: 85%;
+	color: #666;
+}
+
+div.user_info img {
+	padding-right: 0.1em;
+}
+
+div.user_info a {
+	text-decoration: none;
+}
+
+div.user_info span.user_name {
+	position: absolute;
+}
+
+div.user_info span.microposts {
+	font-size: 80%
+}
+
+form.new_micropost {
+	margin-bottom: 2em;
+}
+
+form.new_micropost textarea {
+	height: 4em;
+	margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+

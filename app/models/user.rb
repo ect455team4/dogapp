@@ -36,22 +36,18 @@ class User < ActiveRecord::Base
   attr_accessible :address, :city, :country, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :state, :password, :password_confirmation, 
                   :dog_name, :dog_breed, :dog_dob, :vet, :boarder, :groomer, :food, :toys
 
+  has_many :microposts, :dependent => :destroy
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :first_name, 	:presence				=> true,
-  							:length					=> { :maximum => 50 }
+  validates :first_name, :presence => true, :length => { :maximum => 50 }
   
-  validates :last_name,		:presence				=> true,
-   							:length					=> { :maximum => 50 }
+  validates :last_name, :presence	=> true, :length => { :maximum => 50 }
   
-  validates	:email,			:presence				=> true,
-  							:format					=> { :with => email_regex },
-  							:uniqueness				=> { :case_sensitive => false }
+  validates	:email, :presence	=> true, :format => { :with => email_regex }, :uniqueness	=> { :case_sensitive => false }
 
 # creates the virtual attribute  'password_confirmation'.
-  validates :password,		:presence 				=> true,	
-  							:confirmation			=> true,
-  							:length					=> { :within => 6..40 }
+  validates :password, :presence => true, :confirmation	=> true, :length	=> { :within => 6..40 }
 
   before_save :encrypt_password
 
@@ -71,7 +67,7 @@ class User < ActiveRecord::Base
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
   end
-
+  
   private
 
   	def encrypt_password

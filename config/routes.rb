@@ -1,12 +1,12 @@
 Dogapp::Application.routes.draw do
   root :to  => 'pages#welcome'
   
-  get "sessions/new"
-
-  get "users/new"
-
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions,      :only => [:new, :create, :destroy]  
+  resources :microposts,    :onlt => [:create, :destroy]
+
+  get "sessions/new"
+  get "users/new"
 
   match '/welcome',   :to => 'users#new'
   match '/signin',    :to => 'sessions#new'

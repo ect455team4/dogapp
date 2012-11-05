@@ -1,8 +1,28 @@
-	<li>
-		<%= gravatar_for user %>
+<tr>
+	<td class="user_gravatar">
+			<%= gravatar_for user, :size => 60 %>
+</td>
+<td class="user_name">
 		<%= user.first_name %> <%= user.last_name %>
+</td>
+<td class="user_short_bio">
+		<%= user.short_bio %>
+</td>
+<td class="admin_delete">
 		<% if current_user.admin? %>
 		| <%= link_to "Delete", user, :method => :delete, :confirm => "Are you sure you want to delete this user?",
 									  :title => "Delete #{user.first_name}" %>
 		<% end %>
-	</li>
+</td>
+<tr>
+	<td>
+	</td>
+</tr>
+<tr>
+	<td>
+	</td>
+</tr>
+
+
+
+
