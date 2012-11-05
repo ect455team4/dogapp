@@ -1,9 +1,10 @@
 <h1>All Users</h1>
 
-<%= will_paginate %>
-
+<div class="align_paginate_top"><%= will_paginate @users %></div>
 <table class="index">
 		<%= render @users %>
 </table>
+<div class="align_paginate_bottom"><%= will_paginate @users %></div>
 
-<%= will_paginate %>
+
+

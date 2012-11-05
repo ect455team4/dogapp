@@ -12,7 +12,7 @@ namespace :db do
 		admin.toggle!(:admin)
 
 		#Sample Users
-		20.times do |n|
+		50.times do |n|
 			first_name = Faker::Name.first_name
 			last_name = Faker::Name.last_name
 			email = "User-#{n+1}@example.com"

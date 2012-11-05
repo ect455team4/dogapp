@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   		redirect_to @user
     else
       flash.now[:error] = "Invalid email or password combination."
-      render 'pages/welcome'
+      render '/pages/welcome'
   	end
   end
 

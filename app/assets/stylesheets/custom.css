@@ -164,6 +164,12 @@ table.sidebar {
 	border: 1px solid;
 }
 
+table.micropost_form {
+	width: 60%;
+	margin-top: 1em;
+	border: 1px solid;
+}
+
 /* Form */
 
 table.form {
@@ -295,34 +301,43 @@ textarea {
 
 table.index {
 	width: 100%;
-	padding: .3em;
-	border-width: 3px;
-	border-style: outset;
-	border-color: #778899;
 }
 
-td.user_gravatar {
-	width: 8%;
+table.index tr td.divider_top {
+	border-top: thin solid black;
 }
 
-td.user_name {
+table.index td.user_gravatar {
+	padding-left: .5em;
+	padding-bottom: 0;
+
+}
+
+table.index td.user_name {
+	padding-left: 1.5em;
 	font-size: 18px;
-	width: 22%;
-	text-align: center;
+	text-align: left;
+	width: 25%;
 }
 
-td.user_short_bio {
+table.index td.user_short_bio {
 	width: 60%;
-	padding-left: 1em;
-	border-left: 1px solid;
+	padding-left: 1.5em;
+	border-left: thin dotted black;
 }
 
-td.admin_delete {
+table.index td.admin_delete {
 	width: 10%;
 }
 
-div.divider {
-	border-bottom: 1px solid;
+div.align_paginate_top {
+	margin-left: 4em;
+	padding-bottom: 1em;
+}
+
+div.align_paginate_bottom {
+	margin-left: 4em;
+	padding-top: 1em;
 }
 /* Welcome Page */
 
@@ -359,13 +374,15 @@ div.signup_action {
 	padding: 0em 0em 0em 7em;
 }
 
-/* Micropost */
+/* Micropost Section */
 
 h1.micropost {
 	margin-bottom: 0.3em;
 }
 
 table.microposts {
+	width: 60%;
+	border: 1px solid black;
 	margin-top: 1em;
 }
 
