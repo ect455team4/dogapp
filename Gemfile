@@ -7,12 +7,12 @@ gem 'gravatar_image_tag'
 gem 'thin'
 gem 'sinatra'
 gem 'will_paginate'
+gem 'faker'
 
 group :development do
 	gem 'rspec-rails'
 	gem 'watchr'
 	gem 'annotate'
-	gem 'faker'
 end
 
 group :test do
