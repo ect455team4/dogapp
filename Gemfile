@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 gem 'pg'
+gem 'bootstrap-sass'
 gem 'gravatar_image_tag'
 gem 'thin'
 gem 'sinatra'
@@ -30,6 +31,9 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'therubyracer', :platforms => :ruby
+  gem 'less-rails'
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'

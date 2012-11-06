@@ -1,21 +1,25 @@
-<header>
-	<%= image_tag("HoundImageLarge.png", :alt => "DogStop", :class => "round") %>
-	<nav class="round">
-		  <% if signed_in? %>
-		  	<table class="user_nav">
-				<tr>
-					<td><%= link_to "Home", home_path %></td>
-					<td><%= link_to "Users", users_path %></td>
-					<td><%= link_to "Profile", current_user %></td>
-					<td><%= link_to "Settings", edit_user_path(current_user) %></td>
-					<td><%= link_to "Sign Out", signout_path, :method => :delete %></td>
-				</tr>
-			</table>
-		  <% else %>
-		  	<table class="signin">
-				<%= render 'sessions/signin' %> 
-			</table>
-		  <% end %>
-	</nav>
-
+<header class="navbar navbar-fixed-top">
+  	<div class="navbar-inner">
+    	<div class="container">
+      		<nav class="pull-right">
+     					<% if signed_in? %>
+     						<ul class="unstyled">
+		  						<li id="fat-menu" class="dropdown">
+              						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+              					  	<ul class="dropdown-menu">
+              							<li><%= link_to "Home", home_path %></li>
+                						<li><%= link_to "Profile", current_user %></li>
+                            <li><%= link_to "Member Index", users_path %></li>
+                						<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                						<li class="divider"></li>
+                						<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+              					  	</ul>
+            	  				</li>
+            	  			</ul>
+          					<% else %>
+          					<%= render 'sessions/signin' %>
+         					<% end %>
+      		</nav>
+      	</div>
+    </div>
 </header>

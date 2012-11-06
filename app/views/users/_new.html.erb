@@ -1,31 +1,21 @@
-<div class="signup_header">
-	<h2>Sign Up. It is free.</h2>
-</div>
-<div class="align_signup">
 <%= form_for User.new do |f| %>
 	<div class="field">
-		<label>First Name:</label><br />
-		<%= f.text_field :first_name %>
+		<%= f.text_field :first_name, :class => "input-med", :placeholder => "First Name" %>
 	</div>
 	<div class="field">
-		<label>Last Name:</label><br />
-		<%= f.text_field :last_name %>
+		<%= f.text_field :last_name, :class => "input-med", :placeholder => "Last Name" %>
 	</div>
 	<div class ="field">
-		<label>Email:</label><br />
-		<%= f.text_field :email %>
+		<%= f.text_field :email, :class => "input-med", :placeholder => "Email" %>
 	</div>
 	<div class ="field">
-		<label>Password:</label><br />
-		<%= f.password_field :password %>
+		<%= f.password_field :password, :class => "input-med", :placeholder => "Password" %>
 	</div>
 	<div class ="field">
-		<label>Confirm Password:</label><br />
-		<%= f.password_field :password_confirmation %>
+		<%= f.password_field :password_confirmation, :class => "input-med", :placeholder => "Confirm Password" %>
 	</div>
-	<div class="signup_action">
-		<%= f.submit "Sign Up" %>
+	<div class="signup_action pull-right">
+		<%= f.submit "Sign Up", :class => "btn btn-regular" %>
 	</div>
-</div>
 <% end %>
 

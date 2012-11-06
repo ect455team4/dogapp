@@ -1,12 +1,11 @@
-<div class="profile_show">
-<table class="user_title">
-	<tr>
-		<td class="user_title">
-			<%= gravatar_for @user, :size => 100 %> 
-			<%= render 'users/user_name' %>
-		</td>
-	</tr>
-</table>
+<div class="row">
+	<div class="span12">
+		<div class="span2"><%= gravatar_for @user, :size => 150 %></div>
+		<div class="span9 user_name"><%= render 'users/user_name' %></div>
+	</div>
+</div>
+<div class="row">
+<div class="span6">
 <table class="user_info">
 	<tr>
 		<td>
@@ -14,24 +13,8 @@
 		</td>
 	</tr>
 </table>
-<table class="dog_info">
-	<tr>
-		<td class="dog_info">
-			<%= render 'users/dog_info' %>
-		</td>
-	</tr>
-</table>
-
-<% unless @user.microposts.empty? %>
-	<table class="microposts">
-		<%= render @microposts %>
-	</table>
-	<%= will_paginate @microposts %>
-<% end %>
-			
-<br />
-<br />
-
+</div>
+<div class="span5">
 <table class="sidebar">
 	<tr>
 		<td class="sidebar">
@@ -40,5 +23,28 @@
 		</td>
 	</tr>
 </table>
-
 </div>
+</div>
+<h4>Dog Information</h4>
+<div class="row">
+<table class="dog_info">
+	<tr>
+		<td class="dog_info">
+			<%= render 'users/dog_info' %>
+		</td>
+	</tr>
+</table>
+</div>
+<div class="row">
+<% unless @user.microposts.empty? %>
+	<table class="microposts">
+		<%= render @microposts %>
+	</table>
+	<%= will_paginate @microposts %>
+<% end %>
+</div>
+
+
+
+
+

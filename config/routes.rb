@@ -8,9 +8,9 @@ Dogapp::Application.routes.draw do
   get "sessions/new"
   get "users/new"
 
-  match '/signin',    :to => 'sessions#new'
+  match '/welcome',   :to => 'sessions#new'
   match '/signout',   :to => 'sessions#destroy'
-
+  
   match '/home',      :to => 'pages#home'
   match '/about',     :to => 'pages#about'
   match '/contact',   :to => 'pages#contact'
