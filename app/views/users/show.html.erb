@@ -1,32 +1,31 @@
-<div class="row">
-	<div class="span12">
+<div class="row push_top">
 		<div class="span2"><%= gravatar_for @user, :size => 150 %></div>
-		<div class="span9 user_name"><%= render 'users/user_name' %></div>
-	</div>
+		<div class="span6 user_name"><%= render 'users/user_name' %></div>
+		<div class="span3"> <table class="sidebar">
+			<tr>
+				<td class="sidebar">
+					<strong>URL:</strong> <%= link_to user_path(@user), @user %><br />
+					<strong>Number of Posts:</strong> <%= @user.microposts.count %>
+				</td>
+			</tr>
+		  </table>
+		</div>
+
 </div>
 <div class="row">
 <div class="span6">
 <table class="user_info">
 	<tr>
 		<td>
-			<%= render 'users/user_info' %>
-		</td>
-	</tr>
-</table>
-</div>
-<div class="span5">
-<table class="sidebar">
-	<tr>
-		<td class="sidebar">
-			<strong>URL:</strong> <%= link_to user_path(@user), @user %><br />
-			<strong>Number of Posts:</strong> <%= @user.microposts.count %>
+			<%= render 'users/user_information' %>
 		</td>
 	</tr>
 </table>
 </div>
 </div>
-<h4>Dog Information</h4>
 <div class="row">
+<div class="span6">
+<h4><%= current_user.dog_name %></h4>
 <table class="dog_info">
 	<tr>
 		<td class="dog_info">
@@ -35,6 +34,8 @@
 	</tr>
 </table>
 </div>
+</div>
+
 <div class="row">
 <% unless @user.microposts.empty? %>
 	<table class="microposts">

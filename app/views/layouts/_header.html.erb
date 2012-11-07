@@ -1,7 +1,8 @@
 <header class="navbar navbar-fixed-top">
   	<div class="navbar-inner">
-    	<div class="container">
-      		<nav class="pull-right">
+    	<div class="navbar_container">
+        <div class="nav_logo"><%= image_tag("HoundImageLarge.png", :size => "140x100") %>
+      		<nav class="nav pull-right">
      					<% if signed_in? %>
      						<ul class="unstyled">
 		  						<li id="fat-menu" class="dropdown">
@@ -17,9 +18,10 @@
             	  				</li>
             	  			</ul>
           					<% else %>
-          					<%= render 'sessions/signin' %>
+          					<%= render :partial => 'sessions/signin' %>
          					<% end %>
       		</nav>
       	</div>
+      </div>
     </div>
 </header>

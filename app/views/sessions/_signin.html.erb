@@ -1,11 +1,17 @@
-<%= form_for(:session, :url => sessions_path) do |f| %>
+<%= form_for(:session, url: sessions_path) do |f| %>
 <table class="signin">
 	<tr>
+		<td class="signin_email_label">
+			<%= f.label :email %>
+		</td>
 		<td class="signin_email">
-			<%= f.text_field :email, :class => "input-med", :placeholder => "Email"%>
+			<%= f.text_field :email %>
+		</td>
+		<td class="signin_email_label">
+			<%= f.label :password %>
 		</td>
 		<td class="signin_password">
-			<%= f.password_field :password, :class => "input-med", :placeholder => "Password" %>
+			<%= f.password_field :password %>
 		</td>
 		<td class="signin_button">
 		<%= f.submit "Sign In", :class => "btn btn-primary" %>

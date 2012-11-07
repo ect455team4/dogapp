@@ -8,14 +8,19 @@
     <%= render 'layouts/shim' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-	<div class="container">
-		<%= render :partial => 'layouts/header' %>
+<body screen_capture_injected="true">
+		<%= render :partial => 'layouts/header' %>	
+	<div id="wrap">
+		<div class="container">
+			<div class="error_messages">
 			<% flash.each do |key, value| %>
-				<div class="flash <%= key %>"><%= value %></div>
-			<% end %>
+        		<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+     		 <% end %>
+     		</div>
 			<%= yield %>
-		<%= render :partial => 'layouts/footer' %>
+		</div>
+	  <div id="push"></div>
 	</div>
+	<%= render :partial => 'layouts/footer' %>
 </body>
 </html>

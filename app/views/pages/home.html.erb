@@ -1,15 +1,12 @@
 <% if signed_in? %>
-<table class ="front">
-	<tr>
-		<td class="main">
-			<h1 class="micropost">Posts:</h1>
-			<%= render 'shared/micropost_form' %>
-			<%= render 'shared/feed' %>
-		</td>
-		<td class="sidebar">
-		</td>
-	</tr>
-</table>
+<div class="push_top"></div>
+    <%= render 'shared/user_info' %>
+  <div class="span12">
+  <br />
+  <%= render 'shared/micropost_form' %>
+  </div>
+  <%= render 'shared/feed' %>
+
 <% else %>
-<h1>Home Page</h1>
+<%= render 'pages/welcome' %>
 <% end %>

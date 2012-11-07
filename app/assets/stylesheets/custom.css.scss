@@ -1,19 +1,43 @@
 @import "bootstrap";
 
+/* Error Styling */
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+ }
+
+ div.error_messages {
+ 	padding-top: 100px;
+ }
+
+
 html {
   overflow-y: scroll;
+  height: 100%
 }
 
 body {
-  padding-top: 100px;
+	height: 100%;
 }
 
+div.push_top {
+	margin-top: 30px;
+}
 section {
   overflow: auto;
 }
 
 textarea {
-  resize: vertical;
+  resize: none;
 }
 
 .center {
@@ -39,7 +63,14 @@ h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+h3 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
   font-weight: normal;
   color: #999;
 }
@@ -49,40 +80,114 @@ p {
   line-height: 1.7em;
 }
 
-/* Welcome */
-
 div.field {
 	margin-bottom: 10px;
 }
 
+/* Welcome */
+
+h1.welcome {
+	margin-top: 30px
+}
+
+label.first {
+	margin-bottom: 0px;
+}
+
+label.last {
+	margin-bottom: 0px;
+}
+
+label.email {
+	margin-bottom: 0px;
+}
+
+label.password {
+	margin-bottom: 0px;
+}
+
+
 /* Header */
 
 nav {
-	padding-bottom: 0px;
-	margin-bottom: -15px;
+	padding-top: 40px;
+}
+
+div.navbar_container {
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+nav form {
+	margin: 0;
 }
 
 table.signin {
-	vertical-align: bottom;
+
+}
+
+div.nav_logo {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 td.signin_email {
-	padding-top: 1.1em;
-	padding-right: .7em;
+	padding-top: 7px;
+	padding-right: 15px;
+}
+
+td.signin_email_label {
+	padding-right: 5px;
+	padding-bottom: 6px;
+	vertical-align: bottom;
 }
 
 td.signin_password {
-	padding-top: 1.1em;
-	padding-right: 1em;
+	padding-top: 7px;
+}
+
+td.signin_password_label {
+	padding-right: 5px;
+	padding-bottom: 6px;
+	vertical-align: bottom;
+}
+
+td.signin_button {
+	padding-left: 15px;
+	vertical-align: top;
 }
 
 /* Footer */
 
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #999;
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+}
+
+#push {
+	height: 60px;
+}
+
+#footer {
+	height: 60px;
+	background-color: #f5f5f5;
+}
+
+@media (max-width: 767px) {
+	#footer {
+		margin-left: -20px;
+		margin-right: -20px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+div.inner_footer {
+	padding-top: 20px;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 footer a {
@@ -93,25 +198,11 @@ footer a:hover {
   color: #222;
 }
 
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 10px;
-}
-
 /* User Page */
 
 div.user_name {
+	text-align: center;
 	margin-top: 25px;
-	margin-left: 45px;
 }
 
 table.user_info {
@@ -119,7 +210,17 @@ table.user_info {
 	margin-top: 20px;
 }
 
+h1.username {
+	text-align: center;
+	color: #404040;
+}
+
+img.gravatar {
+	border: 3px solid #404040;
+}
+
 ul.user_info {
+	color: #404040;
 	list-style-type: none;
 }
 
@@ -133,6 +234,7 @@ table.dog_info {
 }
 
 ul.dog_info {
+	color: #404040;
 	list-style-type: none;
 }
 
@@ -150,63 +252,47 @@ table.micropost_form {
 	border: 1px solid;
 }
 
-/* Micropost Section */
-
-h1.micropost {
-	margin-bottom: 0.3em;
+div.signup_field {
+	padding-bottom: 0px;
 }
 
-table.microposts {
-	width: 60%;
-	border: 1px solid black;
-	margin-top: 1em;
+label.first {
+	margin-bottom: 0px;
 }
 
-table.microposts tr {
-	height: 70px;
+label.last {
+	margin-bottom: 0px;
 }
 
-table.microposts tr td.gravatar {
-	border-top: 1px solid #ccc;
-	vertical-align: top;
-	width: 50px;
+label.email {
+	margin-bottom: 0px;
 }
 
-table.microposts tr td.micropost {
-	border-top: 1px solid #ccc;
-	vertical-align: top;
-	padding-top: 10px;
+label.password {
+	margin-bottom: 0px;
 }
 
-table.microposts tr td.micropost span.timestamp {
-	display: block;
-	font-size: 85%;
-	color: #666;
+/* microposts */
+
+table.feed {
+	width: 100%;
 }
 
-div.user_info img {
-	padding-right: 0.1em;
+table.gravatar {
+	border: 1px solid;
 }
 
-div.user_info a {
-	text-decoration: none;
+td.feed_table{
+	width: 35%;
 }
 
-div.user_info span.user_name {
-	position: absolute;
+td.feed_content{
+	width: 55%;
 }
 
-div.user_info span.microposts {
-	font-size: 80%
-}
-
-form.new_micropost {
-	margin-bottom: 2em;
-}
-
-form.new_micropost textarea {
-	height: 4em;
-	margin-bottom: 0;
+td.feed_delete{
+	width: 10%;
+	text-align: right;
 }
 
 /* User Index  */

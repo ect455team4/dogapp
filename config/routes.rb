@@ -2,14 +2,10 @@ Dogapp::Application.routes.draw do
   root :to  => 'pages#welcome'
 
   resources :users
-  resources :sessions,      :only => [:new, :create, :destroy]  
+  resources :sessions,      :only => [:create, :destroy]  
   resources :microposts,    :only => [:create, :destroy]
 
-  get "sessions/new"
-  get "users/new"
-
-  match '/welcome',   :to => 'sessions#new'
-  match '/signout',   :to => 'sessions#destroy'
+  match '/signout',   :to => 'sessions#destroy', via: :delete
   
   match '/home',      :to => 'pages#home'
   match '/about',     :to => 'pages#about'
@@ -61,10 +57,6 @@ Dogapp::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  #root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 
