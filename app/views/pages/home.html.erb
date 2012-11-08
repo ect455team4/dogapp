@@ -1,12 +1,16 @@
-<% if signed_in? %>
 <div class="push_top"></div>
-    <%= render 'shared/user_info' %>
+<% if signed_in? %>
+  <%= render 'shared/user_info' %>
   <div class="span12">
   <br />
   <%= render 'shared/micropost_form' %>
   </div>
-  <%= render 'shared/feed' %>
-
+  <div class="span12">
+  <%= render 'shared/stats' %>
+  </div>
+  <div class="span12">
+  	<%= render 'shared/feed' %>
+  </div>
 <% else %>
-<%= render 'pages/welcome' %>
+
 <% end %>

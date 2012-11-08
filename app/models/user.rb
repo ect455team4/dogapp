@@ -37,23 +37,29 @@ class User < ActiveRecord::Base
                   :dog_name, :dog_breed, :dog_dob, :vet, :boarder, :groomer, :food, :toys
 
   has_many :microposts, :dependent => :destroy
+  has_many :relationships, :foreign_key => "follower_id", :dependent => :destroy
+  has_many :following, :through => :relationships, :source => :followed
+
+  has_many :reverse_relationships,  :foreign_key => "followed_id",
+                                    :class_name => "Relationship",
+                                    :dependent => :destroy
+
+  has_many :followers, :through => :reverse_relationships, :source => :follower
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :first_name, :presence => true, :length => { :maximum => 50 }
-  
   validates :last_name, :presence	=> true, :length => { :maximum => 50 }
-  
   validates	:email, :presence	=> true, :format => { :with => email_regex }, :uniqueness	=> { :case_sensitive => false }
 
-# creates the virtual attribute  'password_confirmation'.
+        # creates the virtual attribute  'password_confirmation'.
   validates :password, :presence => true, :confirmation	=> true, :length	=> { :within => 6..40 }
 
   before_save :encrypt_password
 
-#return true if the user password matches submitted password
+        #return true if the user password matches submitted password
   def has_password?(submitted_password)
-  	#compares encrypted_password with the encrypted version of submitted_password
+  	    #compares encrypted_password with the encrypted version of submitted_password
   	encrypted_password == encrypt(submitted_password)
   end
 
@@ -69,9 +75,21 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    Micropost.where("user_id = ?", id)
+    Micropost.from_users_followed_by(self)
+  end
+
+  def following?(followed)
+    relationships.find_by_followed_id(followed)
+  end
+
+  def follow!(followed)
+    relationships.create!(:followed_id => followed.id)
   end
   
+  def unfollow!(other_user)
+    relationships.find_by_followed_id(other_user.id).destroy
+  end
+
   private
 
   	def encrypt_password

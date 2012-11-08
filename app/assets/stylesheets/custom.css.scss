@@ -59,14 +59,6 @@ h1 {
   text-align: left;
 }
 
-h2 {
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  font-weight: normal;
-  color: #999;
-}
-
 h3 {
   font-size: 1.7em;
   letter-spacing: -1px;
@@ -88,6 +80,14 @@ div.field {
 
 h1.welcome {
 	margin-top: 30px
+}
+
+h2.welcome {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: #999;
 }
 
 label.first {
@@ -215,17 +215,24 @@ h1.username {
 	color: #404040;
 }
 
+h2.dog_name {
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	color: #404040;
+}
+
 img.gravatar {
 	border: 3px solid #404040;
 }
 
-ul.user_info {
+div.user_information {
+	padding-top: 20px;
 	color: #404040;
-	list-style-type: none;
 }
 
 div.user_info_spacing {
-	margin-bottom: 10px;
+	margin-bottom: 7px;
 }
 
 table.dog_info {
@@ -233,13 +240,12 @@ table.dog_info {
 	border: 1px solid;
 }
 
-ul.dog_info {
-	color: #404040;
-	list-style-type: none;
-}
-
 div.dog_info_spacing {
 	margin-bottom: 10px;
+}
+
+div.info_border {
+	border-right: 1px solid $grayLighter
 }
 table.sidebar {
 	margin-top: 20px;
@@ -270,6 +276,10 @@ label.email {
 
 label.password {
 	margin-bottom: 0px;
+}
+
+div.profile_posts {
+
 }
 
 /* microposts */
@@ -332,6 +342,53 @@ div.align_paginate_top {
 	margin-left: 4em;
 	padding-bottom: 1em;
 }
+
+/* Stats */
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+/* User Profile Microposts */
+
+table.profile_microposts {
+	width: 100%;
+}
+
+div.profile_content {
+	
+}
+
+div.profile_content_delete {
+	
+}
+
+/* List Users */
+
+table.show_follow {
+	width: 100%
+}
+
+
+
+
 
 	
 

@@ -1,6 +1,6 @@
 <tr>
 	<td class="user_gravatar">
-		<%= gravatar_for user, :size => 60 %>
+		<%= link_to gravatar_for(user, size: 60), user %>
 	</td>
 	<td class="user_name">
 		<%= user.first_name %> <%= user.last_name %>

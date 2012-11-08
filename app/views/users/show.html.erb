@@ -1,49 +1,39 @@
 <div class="row push_top">
-		<div class="span2"><%= gravatar_for @user, :size => 150 %></div>
-		<div class="span6 user_name"><%= render 'users/user_name' %></div>
-		<div class="span3"> <table class="sidebar">
+	<div class="span2"><%= gravatar_for @user, :size => 150 %></div>
+	<div class="span6 user_name"><%= render 'users/user_name' %></div>
+	<div class="span3">
+		<table class="sidebar">
 			<tr>
-				<td class="sidebar">
-					<strong>URL:</strong> <%= link_to user_path(@user), @user %><br />
-					<strong>Number of Posts:</strong> <%= @user.microposts.count %>
-				</td>
+				<td><%= render 'shared/stats' %></td>
+			<tr>
+        	</tr>
+			<tr>
+				<td><strong>Posts-</strong><%= @user.microposts.count %></td>
 			</tr>
-		  </table>
+			<tr>
+				<td><%= render 'follow_form' if signed_in? %></td>
+			</tr>
+		  	</table>
 		</div>
-
 </div>
 <div class="row">
-<div class="span6">
-<table class="user_info">
-	<tr>
-		<td>
-			<%= render 'users/user_information' %>
-		</td>
-	</tr>
-</table>
+<div class="span3 info_border">
+	<%= render 'users/user_information' %>
+	<h2 class="dog_name"><%= current_user.dog_name %></h2>
+	<%= render 'users/dog_info' %>
 </div>
-</div>
-<div class="row">
-<div class="span6">
-<h4><%= current_user.dog_name %></h4>
-<table class="dog_info">
-	<tr>
-		<td class="dog_info">
-			<%= render 'users/dog_info' %>
-		</td>
-	</tr>
-</table>
-</div>
-</div>
-
-<div class="row">
+<div class="span8 profile_posts">
 <% unless @user.microposts.empty? %>
-	<table class="microposts">
-		<%= render @microposts %>
+	<table class="table">
+		<%= render :partial => @microposts %>
 	</table>
-	<%= will_paginate @microposts %>
 <% end %>
+<%= will_paginate @microposts %>
 </div>
+</div>
+
+
+
 
 
 
