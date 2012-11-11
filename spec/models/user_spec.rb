@@ -18,14 +18,6 @@
 #  encrypted_password :string(255)
 #  salt               :string(255)
 #  admin              :boolean          default(FALSE)
-#  dog_name           :string(255)
-#  dog_breed          :string(255)
-#  dog_dob            :string(255)
-#  vet                :string(255)
-#  boarder            :string(255)
-#  groomer            :string(255)
-#  food               :string(255)
-#  toys               :string(255)
 #
 
 require 'spec_helper'

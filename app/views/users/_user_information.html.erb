@@ -1,9 +1,7 @@
 <div class="user_information">
-	<div class="user_info_spacing"><strong>Email:</strong> <%= @user.email %></div>
-	<div class="user_info_spacing"><strong>Birthday:</strong> <%= @user.dob %></div>
-	<div class="user_info_spacing"><strong>Adress:</strong> <%= @user.address %></div>
-	<div class="user_info_spacing"><strong>City:</strong> <%= @user.city %></div>
-	<div class="user_info_spacing"><strong>State:</strong> <%= @user.state %></div>
-	<div class="user_info_spacing"><strong>Country:</strong> <%= @user.country %></div>
-	<div class="user_info_spacing"><strong>About:</strong><br /><%= @user.long_bio %></div>
+	<div class="user_info_spacing"><address><strong>Email:</strong><br /><a href="mailto:#"><%= @user.email %></a></address></div>
+									<address><strong>Address:</strong><br /><%= @user.address %><br>
+											<%= @user.city %>, <%= @user.state %></address>
+
+	<div class="user_info_spacing"><strong>Birthday:</strong><br> <%= @user.dob.strftime("%B %d, %Y") %></div>
 </div>

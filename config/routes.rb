@@ -7,6 +7,8 @@ Dogapp::Application.routes.draw do
     end
   end
 
+  match '/users/:id/edit', :to => 'users#show'
+
   resources :sessions,      :only => [:create, :destroy]  
   resources :microposts,    :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]

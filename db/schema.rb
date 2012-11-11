@@ -48,14 +48,6 @@ ActiveRecord::Schema.define(:version => 20121107152538) do
     t.string   "encrypted_password"
     t.string   "salt"
     t.boolean  "admin",              :default => false
-    t.string   "dog_name"
-    t.string   "dog_breed"
-    t.string   "dog_dob"
-    t.string   "vet"
-    t.string   "boarder"
-    t.string   "groomer"
-    t.string   "food"
-    t.string   "toys"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

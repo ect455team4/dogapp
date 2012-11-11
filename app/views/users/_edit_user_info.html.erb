@@ -1,0 +1,18 @@
+<div id="userInfo" class="modal fade" data-backdrop="static">
+  <div class="modal-header">
+    <div class="user_info close float-right"><%= link_to "×", current_user %></div>
+    <h3>User Information</h3>
+  </div>
+    <div class="modal-body user_info">
+      <%= gravatar_for @user, :size => 75 %> <a href="http://gravatar.com/emails">Change Gravatar</a><br /><br />
+      <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', :object => f.object %>
+      <%= render 'users/user_fields', :f => f %>
+    </div>
+  <div class="modal-footer user_info">
+    <div>
+    <%= f.submit "Update"%>
+    <% end %>
+  </div>
+  </div>
+</div>

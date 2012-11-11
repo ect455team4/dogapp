@@ -1,6 +1,6 @@
 <div class="row push_top">
 	<div class="span2"><%= gravatar_for @user, :size => 150 %></div>
-	<div class="span6 user_name"><%= render 'users/user_name' %></div>
+	<div class="span6 user_name"><h1 class="username"><%= @user.full_name %></h1></div>
 	<div class="span3">
 		<table class="sidebar">
 			<tr>
@@ -19,8 +19,6 @@
 <div class="row">
 <div class="span3 info_border">
 	<%= render 'users/user_information' %>
-	<h2 class="dog_name"><%= current_user.dog_name %></h2>
-	<%= render 'users/dog_info' %>
 </div>
 <div class="span8 profile_posts">
 <% unless @user.microposts.empty? %>

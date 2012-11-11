@@ -19,6 +19,9 @@
  	padding-top: 100px;
  }
 
+div.alert {
+	text-align: center;
+}
 
 html {
   overflow-y: scroll;
@@ -116,6 +119,14 @@ nav {
 div.navbar_container {
 	margin-left: 15%;
 	margin-right: 15%;
+}
+
+ul.nav.profile_nav.pull-right.nav-tabs{
+	padding-top: 45px;
+}
+
+ul.nav.profile_nav.pull-right li a:hover {
+	background-color: #E0E0E0;
 }
 
 nav form {
@@ -385,6 +396,47 @@ div.profile_content_delete {
 table.show_follow {
 	width: 100%
 }
+
+/* Edit User Info */
+
+.user_info.close.float-right a:hover {
+	text-decoration:none;
+}
+
+div#userInfo.modal.fade.in {
+   margin-top: -45%;
+   margin-left: -450px;
+   margin-right: -450px;
+   width: 900px;
+}
+
+.modal-body.user_info {
+	max-height: 650px;
+}
+
+table.user_information {
+	margin-left: 140px;
+}
+
+table.user_information td.first_name {
+	
+}
+
+table.user_information td.email {
+	padding-top: 20px;
+}
+
+table.user_information td.birthday {
+	padding-top: 20px;
+}
+
+table.user_information td.address {
+	padding-top: 30px;
+}
+
+
+
+
 
 
 

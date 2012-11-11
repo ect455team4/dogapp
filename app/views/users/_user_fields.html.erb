@@ -1,37 +1,58 @@
-	<div class="field">
-		<label>First Name:</label>
-		<%= f.text_field :first_name %>
-	</div>
-	<div class="field">
-		<label>Last Name:</label>
-		<%= f.text_field :last_name %>
-	</div>
-	<div class ="field">
-		<label>Email:</label>
-		<%= f.text_field :email %>
-	</div>
-	<div class ="field">
-		<label>Birthday:</label>
-		<%= f.text_field :dob %>
-	</div>
-		<div class ="field">
-		<label>Street Address:</label>
-		<%= f.text_field :address %>
-	</div>
-		<div class ="field">
-		<label>City:</label>
-		<%= f.text_field :city %>
-	</div>
-		<div class ="field">
-		<label>State:</label>
-		<%= f.text_field :state %>
-	</div>
-	<div class ="field">
-		<label>Country:</label>
-		<%= f.text_field :country %>
-	</div>
-	<div class ="field">
-		<label>Short Biography:</label>
-		<%= f.text_field :short_bio %>
-	</div>
+<table class="user_information">
+	<tr>
+		<td class="first_name">
+			<label>First Name:</label>
+			<%= f.text_field :first_name %>
+		</td>
+		<td class="last_name">
+			<label>Last Name:</label>
+			<%= f.text_field :last_name %>
+		</td>
+	</tr>
+	<tr>
+		<td class="birthday" colspan="1">
+			<label>Birthday:</label>
+			<%= f.date_select :dob, { :end_year => DateTime.now.year - 100, :start_year => DateTime.now.year }, :style => "width: 120px;" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="email" colspan="1">
+			<label>Email:</label>
+			<%= f.text_field :email %>
+		</td>
+	</tr>
+	<tr>
+		<td class="address">
+			<label>Address:</label>
+			<%= f.text_field :address %>
 
+			<label>City:</label>
+			<%= f.text_field :city %>
+
+			<label>State:</label>
+			<%= f.text_field :state, :style => "width: 50px" %>
+		</td>
+	</tr>
+	<tr>
+		<td class="short_bio">
+			<label>Short Biography:</label>
+			<%= f.text_field :short_bio %>
+		</td>
+	</tr>
+	<tr>
+		<td class="long_bio">
+			<label>Biography:</label><br />
+      		<%= f.text_area :long_bio %> 
+      	</td>
+    </tr>
+    <tr> 
+    	<td class="password"
+			<label>Password:</label><br />
+    		<%= f.password_field :password %>
+    	</td>
+    	<td class="confirm_password">
+			<label>Password Confirmation:</label>
+      		<%= f.password_field :password_confirmation %>
+      	</td>
+    </tr>
+</table>    

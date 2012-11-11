@@ -15,14 +15,13 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
     @microposts = @user.microposts.paginate(:page => params[:page], :per_page => 5)
-    @title = @user.first_name
+    @title = @user.full_name
   end
   
   def create
   	@user = User.new(params[:user])
   	if @user.save
       sign_in @user
-  		flash[:success] = "Welcome to Dog Stop! Please fill out the following to complete your profile."
   		redirect_to edit_user_path(@user)
     else
       flash.now[:error] = "Invalid email or password combination."
@@ -31,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @title = "Edit User"
+    @user = User.find(params[:id])
   end
 
   def update

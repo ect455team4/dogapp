@@ -18,14 +18,6 @@
 #  encrypted_password :string(255)
 #  salt               :string(255)
 #  admin              :boolean          default(FALSE)
-#  dog_name           :string(255)
-#  dog_breed          :string(255)
-#  dog_dob            :string(255)
-#  vet                :string(255)
-#  boarder            :string(255)
-#  groomer            :string(255)
-#  food               :string(255)
-#  toys               :string(255)
 #
 
 require 'digest'
@@ -33,8 +25,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :password
 
-  attr_accessible :address, :city, :country, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :state, :password, :password_confirmation, 
-                  :dog_name, :dog_breed, :dog_dob, :vet, :boarder, :groomer, :food, :toys
+  attr_accessible :address, :city, :country, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :state, :password, :password_confirmation
 
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id", :dependent => :destroy
@@ -55,7 +46,11 @@ class User < ActiveRecord::Base
         # creates the virtual attribute  'password_confirmation'.
   validates :password, :presence => true, :confirmation	=> true, :length	=> { :within => 6..40 }
 
-  before_save :encrypt_password
+  before_save :encrypt_password, :downcase_email, :case_firstname, :case_lastname, :full_name
+
+  def full_name
+    [first_name, last_name].join(' ')
+  end
 
         #return true if the user password matches submitted password
   def has_password?(submitted_password)
@@ -108,4 +103,16 @@ class User < ActiveRecord::Base
   	def secure_hash(string)
   		Digest::SHA2.hexdigest(string)
   	end
+
+    def downcase_email
+      self.email = self.email.downcase if self.email.present?
+    end
+
+    def case_firstname
+      self.first_name = self.first_name.capitalize if self.first_name.present?
+    end
+
+    def case_lastname
+      self.last_name = self.last_name.capitalize if self.last_name.present?
+    end
 end
