@@ -10,7 +10,7 @@
 #  address            :string(255)
 #  city               :string(255)
 #  state              :string(255)
-#  country            :string(255)
+#  zip                :string(255)
 #  short_bio          :string(255)
 #  long_bio           :text
 #  created_at         :datetime         not null
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   
   attr_accessor :password
 
-  attr_accessible :address, :city, :country, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :state, :password, :password_confirmation
+  attr_accessible :address, :dob, :email, :first_name, :last_name, :long_bio, :short_bio, :password, :password_confirmation, :zip
 
   has_many :microposts, :dependent => :destroy
   has_many :relationships, :foreign_key => "follower_id", :dependent => :destroy
@@ -38,23 +38,30 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :reverse_relationships, :source => :follower
 
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  zip_regex = /^\d{5}(-\d{4})?$/
 
   validates :first_name, :presence => true, :length => { :maximum => 50 }
   validates :last_name, :presence	=> true, :length => { :maximum => 50 }
   validates	:email, :presence	=> true, :format => { :with => email_regex }, :uniqueness	=> { :case_sensitive => false }
 
-        # creates the virtual attribute  'password_confirmation'.
+  # creates the virtual attribute  'password_confirmation'.
   validates :password, :presence => true, :confirmation	=> true, :length	=> { :within => 6..40 }
 
+  validates_format_of :zip, :with => zip_regex, :on => :update
+
   before_save :encrypt_password, :downcase_email, :case_firstname, :case_lastname, :full_name
+
+  def area
+    
+  end
 
   def full_name
     [first_name, last_name].join(' ')
   end
 
-        #return true if the user password matches submitted password
+  #return true if the user password matches submitted password
+  #compares encrypted_password with the encrypted version of submitted_password
   def has_password?(submitted_password)
-  	    #compares encrypted_password with the encrypted version of submitted_password
   	encrypted_password == encrypt(submitted_password)
   end
 
@@ -115,4 +122,5 @@ class User < ActiveRecord::Base
     def case_lastname
       self.last_name = self.last_name.capitalize if self.last_name.present?
     end
+
 end

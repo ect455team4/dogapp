@@ -1,7 +1,9 @@
 <div class="user_information">
 	<div class="user_info_spacing"><address><strong>Email:</strong><br /><a href="mailto:#"><%= @user.email %></a></address></div>
 									<address><strong>Address:</strong><br /><%= @user.address %><br>
-											<%= @user.city %>, <%= @user.state %></address>
+											<%= @user.zip.to_region %></address>
 
 	<div class="user_info_spacing"><strong>Birthday:</strong><br> <%= @user.dob.strftime("%B %d, %Y") %></div>
+
 </div>
+

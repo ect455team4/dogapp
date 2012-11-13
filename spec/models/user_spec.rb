@@ -10,7 +10,7 @@
 #  address            :string(255)
 #  city               :string(255)
 #  state              :string(255)
-#  country            :string(255)
+#  zip                :string(255)
 #  short_bio          :string(255)
 #  long_bio           :text
 #  created_at         :datetime         not null

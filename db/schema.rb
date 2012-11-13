@@ -38,9 +38,7 @@ ActiveRecord::Schema.define(:version => 20121107152538) do
     t.string   "email"
     t.date     "dob"
     t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country"
+    t.string   "zip"
     t.string   "short_bio"
     t.text     "long_bio"
     t.datetime "created_at",                            :null => false

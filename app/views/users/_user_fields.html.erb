@@ -12,7 +12,7 @@
 	<tr>
 		<td class="birthday" colspan="1">
 			<label>Birthday:</label>
-			<%= f.date_select :dob, { :end_year => DateTime.now.year - 100, :start_year => DateTime.now.year }, :style => "width: 120px;" %>
+			<%= f.date_select :dob, { :end_year => DateTime.now.year - 100, :start_year => DateTime.now.year, :default => { :year => 2000, :month => 1, :day => 1 } }, :style => "width: 120px;" %>
 		</td>
 	</tr>
 	<tr>
@@ -26,11 +26,8 @@
 			<label>Address:</label>
 			<%= f.text_field :address %>
 
-			<label>City:</label>
-			<%= f.text_field :city %>
-
-			<label>State:</label>
-			<%= f.text_field :state, :style => "width: 50px" %>
+			<label>Zip:</label>
+			<%= f.text_field :zip, :style => "width: 90px" %>
 		</td>
 	</tr>
 	<tr>

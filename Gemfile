@@ -8,18 +8,15 @@ gem 'thin'
 gem 'sinatra'
 gem 'will_paginate'
 gem 'faker'
-gem "jquery-rails"
+gem 'area'
 
 group :development do
 	gem 'rspec-rails'
-	gem 'watchr'
 	gem 'annotate'
 end
 
 group :test do
 	gem 'rspec-rails'
-	gem 'watchr'
-	gem 'factory_girl'
 end
 
 # Gems used only for assets and not required
