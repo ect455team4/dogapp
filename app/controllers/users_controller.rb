@@ -22,7 +22,8 @@ class UsersController < ApplicationController
   	@user = User.new(params[:user])
   	if @user.save
       sign_in @user
-  		redirect_to edit_user_path(@user)
+      redirect_to new_user_path
+  		#redirect_to edit_user_path(@user)
     else
       flash.now[:error] = "Invalid email or password combination."
       render '/pages/welcome'

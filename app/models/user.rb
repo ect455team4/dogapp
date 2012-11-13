@@ -51,10 +51,6 @@ class User < ActiveRecord::Base
 
   before_save :encrypt_password, :downcase_email, :case_firstname, :case_lastname, :full_name
 
-  def area
-    
-  end
-
   def full_name
     [first_name, last_name].join(' ')
   end

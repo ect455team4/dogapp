@@ -7,6 +7,10 @@ jQuery ->
   show: true;
   })
 
+  $('#newUser').modal({
+  show: true;
+  })
+
 
 
 

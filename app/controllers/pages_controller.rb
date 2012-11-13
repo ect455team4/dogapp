@@ -20,4 +20,5 @@ class PagesController < ApplicationController
       render 'pages/welcome'
     end
   end
+  
 end
