@@ -4,7 +4,7 @@
         <div class="nav_logo"><%= image_tag("HoundImageLarge.png", :size => "140x100") %>
      					<% if signed_in? %>
      						<ul class="nav profile_nav pull-right nav-tabs">           					  	
-                      <li class="<%= 'active' if current_page?(home_path) %>"><%= link_to "Home", home_path %></li>
+                      <li class="<%= 'active' if current_page?(home_path) %>"><%= link_to "Marketplace", home_path %></li>
                       <li class="divider-vertical"></li>
                       <li class="<%= 'active' if current_page?(current_user) %>"><%= link_to "Profile", current_user %></li>
                       <li class="divider-vertical"></li>
