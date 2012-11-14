@@ -28,6 +28,7 @@ GEM
     activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    ajaxful_rating (2.2.9.1)
     annotate (2.5.0)
       rake
     area (0.6.1)
@@ -152,6 +153,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ajaxful_rating
   annotate
   area
   bootstrap-sass

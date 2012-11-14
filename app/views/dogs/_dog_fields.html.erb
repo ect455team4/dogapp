@@ -1,0 +1,16 @@
+  <div class="field">
+    <div class="field">
+  		<label>Name:</label>
+		<%= f.text_field :name %>
+  	</div>
+  	<div class="field">
+  		<label>Breed:</label>
+		<%= f.text_field :breed %>
+	</div>
+	<div class="field">
+		<label>Birthday:</label>
+		<%= f.date_select :dob, { :end_year => DateTime.now.year - 100, :start_year => DateTime.now.year, :default => { :year => 2000, :month => 1, :day => 1 } }, :style => "width: 120px;" %>
+	</div>
+</div>
+
+

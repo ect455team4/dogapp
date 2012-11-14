@@ -1,0 +1,8 @@
+<% current_user.dogs.each do |dog| %>
+  <p class="dog_info lead"><u><%= dog.name %></u></p>
+
+  <strong>Breed:</strong><br><%= dog.breed %><br /><br />
+
+  <strong>Birthday</strong><br><%= dog.dob.strftime("%B %d, %Y") %><br /><br />
+
+<% end %>

@@ -2,16 +2,18 @@ Dogapp::Application.routes.draw do
   root :to => 'pages#home'
 
   resources :users do
+    resources :dogs, :only => [:index, :new, :create, :edit, :update, :destroy]
     member do
       get :following, :followers
     end
   end
-
+  
   resources :sessions,      :only => [:create, :destroy]  
   resources :microposts,    :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]
 
   match '/signout',   :to => 'sessions#destroy', via: :delete
+  match '/users/:user_id/dogs/:id',   :to => 'dogs#destroy', :via => :delete
   
   match '/home',      :to => 'pages#home'
   match '/about',     :to => 'pages#about'

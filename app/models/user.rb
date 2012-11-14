@@ -8,8 +8,6 @@
 #  email              :string(255)
 #  dob                :date
 #  address            :string(255)
-#  city               :string(255)
-#  state              :string(255)
 #  zip                :string(255)
 #  short_bio          :string(255)
 #  long_bio           :text
@@ -37,15 +35,17 @@ class User < ActiveRecord::Base
 
   has_many :followers, :through => :reverse_relationships, :source => :follower
 
+  has_many :dogs, :dependent => :destroy
+
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   zip_regex = /^\d{5}(-\d{4})?$/
 
-  validates :first_name, :presence => true, :length => { :maximum => 50 }
-  validates :last_name, :presence	=> true, :length => { :maximum => 50 }
+  validates :first_name, :presence => true, :length => { :maximum => 30 }
+  validates :last_name, :presence	=> true, :length => { :maximum => 30 }
   validates	:email, :presence	=> true, :format => { :with => email_regex }, :uniqueness	=> { :case_sensitive => false }
 
   # creates the virtual attribute  'password_confirmation'.
-  validates :password, :presence => true, :confirmation	=> true, :length	=> { :within => 6..40 }
+  validates :password, :presence => true, :confirmation	=> true, :length	=> { :within => 6..40 }, :on => :update
 
   validates_format_of :zip, :with => zip_regex, :on => :update
 

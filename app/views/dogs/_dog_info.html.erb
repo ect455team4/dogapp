@@ -1,0 +1,19 @@
+
+<tr>
+    <% current_user.dogs.each do |dog| %>
+    <td class="dog_name">
+      <%= dog.name %>
+      </td>
+    <td class="dog_breed">
+      <%= dog.breed %>
+    </td>
+    <td class="dog_dob">
+      <%= dog.dob.strftime("%B %d, %Y") %>
+    </td>
+    <td class="dog_edit">
+      <%= link_to "Edit", edit_user_dog_path(current_user, dog), :class => "btn btn-info" %>
+    </td>
+<% end %>
+</tr>
+
+

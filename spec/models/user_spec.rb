@@ -8,8 +8,6 @@
 #  email              :string(255)
 #  dob                :date
 #  address            :string(255)
-#  city               :string(255)
-#  state              :string(255)
 #  zip                :string(255)
 #  short_bio          :string(255)
 #  long_bio           :text

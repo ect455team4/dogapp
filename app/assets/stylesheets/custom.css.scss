@@ -222,8 +222,10 @@ table.user_info {
 }
 
 h1.username {
-	text-align: center;
+	padding-left: 70px;
+	letter-spacing: 1px;
 	color: #404040;
+	font-size: 40px;
 }
 
 h2.dog_name {
@@ -233,8 +235,12 @@ h2.dog_name {
 	color: #404040;
 }
 
+div.title_stats {
+	padding-left: 0px;
+}
+
 img.gravatar {
-	border: 3px solid #404040;
+	border: 1.5px solid #404040;
 }
 
 div.user_information {
@@ -304,10 +310,11 @@ table.gravatar {
 }
 
 td.feed_table{
-	width: 35%;
+	width: 20%;
 }
 
 td.feed_content{
+	border-left: 1px solid $grayLighter;
 	width: 55%;
 }
 
@@ -318,31 +325,43 @@ td.feed_delete{
 
 /* User Index  */
 
+table.index th.index_header {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 table.index {
 	width: 100%;
 }
 
-table.index tr td.divider_top {
-	border-top: thin solid black;
+td.profile_content_delete{
+	width: 10%;
+	text-align: right;
 }
 
-table.index td.user_gravatar {
-	padding-left: .5em;
-	padding-bottom: 0;
 
+
+table.index td.user_gravatar {
+	border-top: 1px solid $grayLighter;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 2.5em;
 }
 
 table.index td.user_name {
-	padding-left: 1.5em;
-	font-size: 18px;
+	border-top: 1px solid $grayLighter;
+	vertical-align: center;
+	padding-left: 1em;
+	font-size: 16px;
 	text-align: left;
-	width: 25%;
+	width: 30%;
 }
 
 table.index td.user_short_bio {
-	width: 60%;
+	border-top: 1px solid $grayLighter;
+	vertical-align: center;
+	width: 55%;
 	padding-left: 1.5em;
-	border-left: thin dotted black;
 }
 
 table.index td.admin_delete {
@@ -351,7 +370,6 @@ table.index td.admin_delete {
 
 div.align_paginate_top {
 	margin-left: 4em;
-	padding-bottom: 1em;
 }
 
 /* Stats */
@@ -389,6 +407,10 @@ div.profile_content {
 
 div.profile_content_delete {
 	
+}
+
+p.dog_info {
+	font-size: 34px;
 }
 
 /* List Users */
@@ -434,7 +456,18 @@ table.user_information td.address {
 	padding-top: 30px;
 }
 
+table.biography {
+	margin-left: 140px;
+}
 
+td.user_info_password {
+	padding-left: 40px;
+	padding_right: 40px;
+}
+
+td.user_info_password_confirmation {
+	padding-left: 80px;
+}
 
 
 

@@ -11,6 +11,22 @@ jQuery ->
   show: true;
   })
 
+  $('#dogInfo').modal({
+  show: true;
+  })
+
+  $('#dogNew').modal({
+  show: true;
+  })
+
+  $('#dogEdit').modal({
+  show: true;
+  })
+
+  $('#resetPassword').modal({
+  show: true;
+  })
+
 
 
 

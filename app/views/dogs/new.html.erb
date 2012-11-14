@@ -1,0 +1,15 @@
+<div id="dogNew" class="modal fade" data-backdrop="static">
+  <div class="modal-header">
+    <div class="dog_add close float-right"><%= link_to "×", current_user %></div>
+    <h3>Add Dog</h3>
+  </div>
+  <div class="modal-body dog_add">
+    <%= form_for([current_user, @dog]) do |f| %>
+    <%= render 'shared/error_messages', :object => f.object %>
+    <%= render 'dog_fields', :f => f %>
+  </div>
+  <div class="modal-footer dog_info">
+        <%= f.submit "Add", :class => "btn btn-primary" %>
+        <% end %>
+  </div>
+</div>

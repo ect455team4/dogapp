@@ -1,0 +1,20 @@
+<div id="dogInfo" class="modal fade" data-backdrop="static">
+  <div class="modal-header">
+    <div class="dog_info close float-right"><%= link_to "×", current_user %></div>
+    <h3>Dog Information</h3>
+  </div>
+  <div class="modal-body dog_info">
+    <% unless current_user.dogs.empty? %>
+    <table class="table table">
+      <th>Name</th>
+      <th>Breed</th>
+      <th>Birthday</th>
+      <th></th>
+      <%= render :partial => 'dog_info' %>
+    </table>
+    <% end %>
+  </div>
+  <div class="modal-footer dog_info">
+      <%= link_to "Add Dog", new_user_dog_path(current_user), :class => "btn btn-primary" %>
+  </div>
+</div>

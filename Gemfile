@@ -9,6 +9,7 @@ gem 'sinatra'
 gem 'will_paginate'
 gem 'faker'
 gem 'area'
+gem 'ajaxful_rating'
 
 group :development do
 	gem 'rspec-rails'

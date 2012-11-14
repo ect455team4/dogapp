@@ -30,26 +30,31 @@
 			<%= f.text_field :zip, :style => "width: 90px" %>
 		</td>
 	</tr>
+</table><br />
+<table class="biography">
 	<tr>
 		<td class="short_bio">
 			<label>Short Biography:</label>
-			<%= f.text_field :short_bio %>
+			<%= f.text_field :short_bio, class: "field span8" %>
 		</td>
 	</tr>
 	<tr>
 		<td class="long_bio">
-			<label>Biography:</label><br />
-      		<%= f.text_area :long_bio %> 
+			<label>Biography:</label>
+      		<%= f.text_area :long_bio, class: "field span8", :rows => "10" %> 
       	</td>
     </tr>
-    <tr> 
-    	<td class="password"
-			<label>Password:</label><br />
-    		<%= f.password_field :password %>
-    	</td>
-    	<td class="confirm_password">
-			<label>Password Confirmation:</label>
-      		<%= f.password_field :password_confirmation %>
+</table>
+<table class="user_information">
+   	<tr>
+		<td class="user_info_password">
+			<label>Password:</label>
+      		<%= f.password_field :password %> 
+      	</td>
+      	<td class="user_info_password_confirmation">
+      		<label>Confirm Password:</label>
+      		<%= f.password_field :password_confirmation %> 
       	</td>
     </tr>
-</table>    
+</table>
+    

@@ -1,34 +1,33 @@
-<div class="row push_top">
+<div class="row-fluid push_top">
 	<div class="span2"><%= gravatar_for @user, :size => 150 %></div>
-	<div class="span6 user_name"><h1 class="username"><%= @user.full_name %></h1></div>
-	<div class="span3">
-		<table class="sidebar">
-			<tr>
-				<td><%= render 'shared/stats' %></td>
-			<tr>
-        	</tr>
-			<tr>
-				<td><strong>Posts-</strong><%= @user.microposts.count %></td>
-			</tr>
-			<tr>
-				<td><%= render 'follow_form' if signed_in? %></td>
-			</tr>
-		  	</table>
-		</div>
+	<div class="span9 user_name"><h1 class="username lead"><%= @user.full_name %></h1>
+	<div class="span1 offset2 user_follow"><%= render 'follow_form' if signed_in? %></div></div>
+	<div class="span3 offset1 title_stats"><%= render 'shared/stats' %>
+											<div><strong>Posts</strong> <%= @user.microposts.count %></div>
+	</div>
+	<div class="span4">
+	<ul class="rating"><% (1..5).each do |i| %><li class="rating_star"></li><% end %></ul>
+	</div>
 </div>
-<div class="row">
+<div class="row-fluid">
+<div class="span12">
 <div class="span3 info_border">
-	<%= render 'users/user_information' %>
+	<%= render 'users/user_information' %><br />
+	<%= render 'dogs/dog_info_main' %>
 </div>
-<div class="span8 profile_posts">
+<div class="span9 profile_posts">
 <% unless @user.microposts.empty? %>
 	<table class="table">
 		<%= render :partial => @microposts %>
 	</table>
 <% end %>
-<%= will_paginate @microposts %>
+<%= will_paginate @microposts, :class => "pagination pagination-centered" %>
 </div>
 </div>
+
+</div>
+
+
 
 
 

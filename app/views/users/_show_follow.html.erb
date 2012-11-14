@@ -1,0 +1,12 @@
+
+<h2 class="welcome"><%= @title %></h2>
+    <% unless @users.present? %>
+    <table class="show_follow table">
+         <%= render @users %>
+    </table>
+    <% end %>
+    <%= will_paginate @users %>
+</div>
+
+
+

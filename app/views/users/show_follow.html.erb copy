@@ -1,0 +1,12 @@
+<div class="row push_top">
+<h2 class="welcome"><%= @title %></h2>
+    <% unless @users.empty? %>
+    <table class="show_follow table">
+         <%= render @users %>
+    </table>
+    <% end %>
+    <%= will_paginate @users %>
+</div>
+
+
+
