@@ -1,6 +1,5 @@
-
+<% current_user.dogs.each do |dog| %>
 <tr>
-    <% current_user.dogs.each do |dog| %>
     <td class="dog_name">
       <%= dog.name %>
       </td>
@@ -12,8 +11,7 @@
     </td>
     <td class="dog_edit">
       <%= link_to "Edit", edit_user_dog_path(current_user, dog), :class => "btn btn-info" %>
-    </td>
-<% end %>
+    </td>  
 </tr>
-
+<% end %>
 

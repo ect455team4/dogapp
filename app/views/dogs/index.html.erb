@@ -5,12 +5,12 @@
   </div>
   <div class="modal-body dog_info">
     <% unless current_user.dogs.empty? %>
-    <table class="table table">
+    <table class="table">
       <th>Name</th>
       <th>Breed</th>
       <th>Birthday</th>
       <th></th>
-      <%= render :partial => 'dog_info' %>
+      <%= render :partial => 'dogs/dog_information' %>
     </table>
     <% end %>
   </div>
